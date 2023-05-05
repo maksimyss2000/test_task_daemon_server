@@ -23,13 +23,13 @@ void Server::recognizeArgument(int argc, char *argv[]){
     }
 }
 
-void Server::setStateServerAccepting() {
+void Server::setStateServerAccepting(){
     mtx.lock();
     server_accepted = true;
     mtx.unlock();
 }
 
-void Server::setStateServerWorking() {
+void Server::setStateServerWorking(){
     mtx.lock();
     server_accepted = false;
     mtx.unlock();
