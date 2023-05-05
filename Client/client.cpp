@@ -68,7 +68,6 @@ void Client::sendFile(){
     while (read_lenght = input_file.readsome(buf.get(), BUF_SIZE)) {
         buf[read_lenght] = '\0';
         sendPartFile(buf.get());   
-
     }
     close(sock);
     input_file.close();
