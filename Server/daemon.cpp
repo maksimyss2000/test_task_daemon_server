@@ -11,7 +11,6 @@ void stopAcceptClient(int sig){
     mtx.unlock();  
 }
 
-
 void daemon(){
     pid_t pid;
     pid = fork();
