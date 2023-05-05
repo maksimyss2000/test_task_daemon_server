@@ -22,23 +22,22 @@
 
 class Client {
 private:
-    int                sock;
-    int                bytes_count;
-    int                port;
-    struct sockaddr_in server_address;
-    std::string        ip;
-    std::string        name_file;
-    void               tryConnect();
-    void               recognizeArgument(int argc, char *argv[]);
-    std::ifstream      openFile();
-    void               sendPartFile(char* part);
-    void               sendNameFile();
-
-    std::unique_ptr<char[]> buf;
+    int                      sock;
+    int                      bytes_count;
+    int                      port;
+    struct sockaddr_in       server_address;
+    std::string              ip;
+    std::string              name_file;
+    std::unique_ptr<char[]>  buf;
+    void                     tryConnect();
+    void                     recognizeArgument(int argc, char *argv[]);
+    void                     sendPartFile(char* part);
+    void                     sendNameFile();
+    std::ifstream            openFile();
 
 public:
-                       Client(int argc, char *argv[]);
-    void               sendFile(); 
+                             Client(int argc, char *argv[]);
+    void                     sendFile(); 
 };
 
 #endif // CLIENT_H

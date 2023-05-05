@@ -35,27 +35,27 @@ extern bool        stop_process;
 extern std::mutex  mtx;  
 
 class Server {
-public:
-                            Server(int argc, char *argv[]);
-    void                    startServer();
-
 private:
-    void                    setStateServerAccepting();
-    void                    setStateServerWorking();
-    void                    receiveFile(std::ofstream& output_file);
-    bool                    getFileName();
-    void                    recognizeArgument(int argc, char *argv[]);
-    std::string             getTime();
-    std::ofstream           openFile();
-    void                    acceptClinet();
     int                     server;
     int                     sock;
     int                     port;
-    std::unique_ptr<char[]> buf;
     struct sockaddr_in      server_address;
     std::string             ip;
     std::string             part_file;
     std::string             name_file;
+    std::unique_ptr<char[]> buf;
+    void                    acceptClinet();
+    void                    setStateServerAccepting();
+    void                    setStateServerWorking();
+    void                    receiveFile(std::ofstream& output_file);
+    void                    recognizeArgument(int argc, char *argv[]);
+    bool                    getFileName();
+    std::string             getTime();
+    std::ofstream           openFile();
+
+public:
+                            Server(int argc, char *argv[]);
+    void                    startServer();
 };
 
 #endif // SERVER_H
