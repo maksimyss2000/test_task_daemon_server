@@ -57,7 +57,8 @@ void Server::startServer(){
         server = accept(sock, NULL, NULL);
         setStateServerWorking();
         if (server < 0) {
-            syslog(LOG_NOTICE, "Error accept");
+            /* @dbg */
+            //syslog(LOG_NOTICE, "Error accept");
         }
         acceptClinet();
     }
@@ -94,7 +95,7 @@ std::string Server::getTime(){
 /* if the file exists, the new file of the form like "name_file(copy$count:time)" will be created */
 std::ofstream  Server::openFile(){
     int count  = 0;
-    std::string addition = "";
+    std::string addition;
     while (true) {        
         std::string new_name = name_file + addition;
         std::filesystem::path filePath(new_name);
