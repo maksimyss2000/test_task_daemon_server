@@ -1,5 +1,5 @@
-dir_client=Client/
-dir_server=Server/
+dir_client=client/
+dir_server=server/
 
 all: server client 
 
