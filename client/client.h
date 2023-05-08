@@ -37,4 +37,3 @@ public:
                              Client(int argc, char *argv[]);
     void                     sendFile(); 
 };
-

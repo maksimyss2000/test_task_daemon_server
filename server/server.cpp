@@ -90,6 +90,7 @@ std::string Server::getTime(){
     oss << std::put_time(&tm, "%d-%m-%Y %H-%M-%S");
     return oss.str();
 }
+
 /* TODO:change while(true) to while (std::filesystem::exists(filePath)) { ... } */
 /* if the file exists, the new file of the form like "name_file(copy$count:time)" will be created */
 std::ofstream  Server::openFile(std::string& name_file){
