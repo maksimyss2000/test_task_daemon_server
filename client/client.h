@@ -6,11 +6,11 @@
 #include <string>
 #include <chrono>
 #include <fstream>
-#include <memory>
 #include <signal.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <unistd.h>
 
 constexpr auto CONNECT_LIMIT_ERROR   =  "client: connect limit error: time connect limit exceeded\n";
 constexpr auto OPEN_FILE_ERROR       =  "client: open file error: unable to open file\n";
