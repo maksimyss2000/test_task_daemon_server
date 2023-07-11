@@ -5,7 +5,7 @@ void stopAcceptClient(int sig){
     if (server_accepted) {
         exit(EXIT_SUCCESS);
     } else {
-    stop_process = true;    
+        stop_process = true;    
     }
 }
 
@@ -23,9 +23,9 @@ void createDaemon(){
     signal(SIGPIPE, SIG_IGN);            /* Trying to read from a closed/broken pipe */
     pid = fork();
         if (pid < 0)
-        exit(EXIT_FAILURE);
+            exit(EXIT_FAILURE);
         if (pid > 0)
-        exit(EXIT_SUCCESS);
+            exit(EXIT_SUCCESS);
     umask(0);
     /* Close all open file descriptors */
     int x;
